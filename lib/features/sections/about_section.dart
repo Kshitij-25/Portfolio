@@ -104,7 +104,7 @@ class AboutSection extends StatelessWidget {
                   ],
                 ),
           const SizedBox(height: 56),
-          const _StatRow(stats: PortfolioData.stats),
+          _StatRow(stats: PortfolioData.stats),
         ],
       ),
     );

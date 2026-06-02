@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'core/state/app_scope.dart';
 import 'core/theme/app_theme.dart';
+import 'data/portfolio_data.dart';
 import 'features/home/home_page.dart';
 
 class PortfolioApp extends StatefulWidget {
@@ -14,6 +15,12 @@ class PortfolioApp extends StatefulWidget {
 
 class _PortfolioAppState extends State<PortfolioApp> {
   final AppState _state = AppState();
+
+  // Load the runtime content once. Kept as a field so hot reload / rebuilds
+  // don't refetch. See [_ContentGate] for the loading & error UI.
+  late Future<void> _contentLoad = PortfolioData.load();
+
+  void _retryLoad() => setState(() => _contentLoad = PortfolioData.load());
 
   @override
   void dispose() {
@@ -43,7 +50,10 @@ class _PortfolioAppState extends State<PortfolioApp> {
               maxScaleFactor: 1.2,
               child: child!,
             ),
-            home: const HomePage(),
+            home: _ContentGate(
+              future: _contentLoad,
+              onRetry: _retryLoad,
+            ),
           );
         },
       ),
@@ -66,4 +76,69 @@ class _SmoothScrollBehavior extends MaterialScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) =>
       const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics());
+}
+
+/// Holds the UI back until [PortfolioData.load] resolves, then shows the
+/// portfolio. Surfaces a retry on the (rare) chance content fails to parse.
+class _ContentGate extends StatelessWidget {
+  const _ContentGate({required this.future, required this.onRetry});
+
+  final Future<void> future;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<void>(
+      future: future,
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.done:
+            if (snapshot.hasError) return _LoadError(onRetry: onRetry);
+            return const HomePage();
+          default:
+            return const _LoadingScreen();
+        }
+      },
+    );
+  }
+}
+
+class _LoadingScreen extends StatelessWidget {
+  const _LoadingScreen();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Center(
+        child: CircularProgressIndicator(
+          color: AppScope.of(context).accentA,
+          strokeWidth: 2.5,
+        ),
+      ),
+    );
+  }
+}
+
+class _LoadError extends StatelessWidget {
+  const _LoadError({required this.onRetry});
+
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text("Couldn't load content."),
+            const SizedBox(height: 16),
+            FilledButton(onPressed: onRetry, child: const Text('Retry')),
+          ],
+        ),
+      ),
+    );
+  }
 }

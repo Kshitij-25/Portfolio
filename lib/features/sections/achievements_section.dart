@@ -22,21 +22,21 @@ class AchievementsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SectionShell(
+    return SectionShell(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SectionHeader(
+          const SectionHeader(
             eyebrow: 'Achievements',
             title: 'Numbers that ',
             titleAccent: 'tell the story.',
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           _MetricGrid(items: PortfolioData.achievements),
-          SizedBox(height: 32),
-          RevealOnScroll(child: _Heatmap()),
-          SizedBox(height: 24),
-          RevealOnScroll(child: _CertStrip()),
+          const SizedBox(height: 32),
+          const RevealOnScroll(child: _Heatmap()),
+          const SizedBox(height: 24),
+          const RevealOnScroll(child: _CertStrip()),
         ],
       ),
     );

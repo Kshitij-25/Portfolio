@@ -1,0 +1,51 @@
+name: Build & Deploy to GitHub Pages
+
+# Push to main → build the Flutter web app → publish to the gh-pages branch.
+# That's the only step you need: `git push origin main`.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allows a manual re-deploy from the Actions tab
+
+# Allow the workflow to push the built site to the gh-pages branch.
+permissions:
+  contents: write
+
+# Never let two deploys run at once; newer pushes supersede in-flight ones.
+concurrency:
+  group: deploy-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.41.8
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Keep the bundled offline/mobile fallback in sync with the live content
+      # file (mirrors tool/build_web.sh) so the build ships matching data.
+      - name: Sync bundled content fallback
+        run: cp web/data/portfolio.json assets/portfolio.json
+
+      # WasmGC renderer (smoothest for this animation-heavy app). --base-href
+      # must match the GitHub Pages project path (https://<user>.github.io/Portfolio/).
+      - name: Build web
+        run: flutter build web --wasm --release --base-href /Portfolio/
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: gh-pages

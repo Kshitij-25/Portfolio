@@ -17,7 +17,7 @@ cd flutter_portfolio
 flutter pub get
 flutter run -d chrome                  # dev
 # release bundle (WasmGC renderer — noticeably smoother):
-flutter build web --wasm --release     # output in build/web (Firebase-Hosting ready)
+flutter build web --wasm --release     # output in build/web (deploys automatically — see below)
 # convenience wrapper for the same command:
 ./tool/build_web.sh
 ```
@@ -28,13 +28,26 @@ Requires Flutter **3.27+** (Dart 3.6+) for the `Color.withValues` API.
 > backdrop blur; the WasmGC renderer is the smoothest option on the web and is
 > the recommended way to ship this app.
 
-### Deploy to Firebase Hosting
+### Deploy (automated)
+
+Deployment is fully automated via GitHub Actions
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)):
 
 ```bash
-flutter build web --wasm --release
-firebase init hosting            # public dir = build/web, single-page app = yes
-firebase deploy
+git push origin main      # ← that's it
 ```
+
+Every push to `main` builds the WasmGC web bundle and publishes it to the
+`gh-pages` branch, which GitHub Pages serves at
+`https://<user>.github.io/Portfolio/`. You can also trigger a re-deploy
+manually from the repo's **Actions** tab (workflow_dispatch).
+
+**One-time setup:** in **Settings → Pages**, set *Source* to *Deploy from a
+branch* → `gh-pages` / `root`. The workflow uses the built-in `GITHUB_TOKEN`,
+so no extra secrets are needed.
+
+> Building for a different path/domain? Update `--base-href` in the workflow
+> (it must match the Pages URL path and start/end with `/`).
 
 ---
 
@@ -70,8 +83,8 @@ lib/
 │       └── section_header.dart   # eyebrow + headline + subtitle
 │
 ├── data/
-│   ├── models.dart               # immutable domain models
-│   └── portfolio_data.dart       # ALL content — edit here
+│   ├── models.dart               # immutable domain models (+ fromJson parsing)
+│   └── portfolio_data.dart       # runtime loader + typed accessors for the JSON
 │
 └── features/
     ├── home/
@@ -140,10 +153,37 @@ desktop only.
 
 ---
 
+## Content (dynamic JSON)
+
+All content lives in a single JSON document — **not** baked into the compiled
+build — so it can be edited on the deployed site without rebuilding.
+
+- **Source of truth:** [`web/data/portfolio.json`](web/data/portfolio.json)
+  (identity, stats, about, skills, projects, experience, achievements, certs).
+- **At runtime** the app fetches `data/portfolio.json` (relative to the site
+  root) with a cache-busting query, so the freshest copy always wins. If the
+  fetch fails (mobile / offline), it falls back to the bundled
+  `assets/portfolio.json`. `./tool/build_web.sh` syncs that bundled copy from
+  the live file at build time, so you only ever edit `web/data/portfolio.json`.
+- **Colours** are `#RRGGBB` hex strings; **icons** are friendly names mapped in
+  `kIconByName` (`lib/data/models.dart`) — add a new key there to use a new icon.
+
+### Update content WITHOUT redeploying
+
+The deployed site serves `data/portfolio.json` as a plain static file:
+
+1. Edit `data/portfolio.json` on the **`gh-pages`** branch (e.g. in the GitHub
+   web editor) and commit.
+2. Reload the site — the new content loads on the next visit. No
+   `flutter build`, no redeploy of the app bundle.
+
+> Keep `web/data/portfolio.json` in source in sync when you do this, so the next
+> full build ships the same content.
+
 ## Customise
 
-- **Content** — everything lives in `lib/data/portfolio_data.dart`
-  (identity, projects, experience, testimonials, achievements, certs).
+- **Content** — see [Content (dynamic JSON)](#content-dynamic-json) above;
+  edit `web/data/portfolio.json`.
 - **Accent colours** — edit `kAccentOptions` in `lib/core/state/app_scope.dart`.
   The current default is the blue→violet gradient.
 - **Default theme** — change `AppState(themeMode: …)` in `app.dart`.
