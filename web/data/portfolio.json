@@ -217,17 +217,17 @@
   ],
   "projects": [
     {
-      "id": "boi-starlight",
-      "title": "BOI Starlight",
-      "category": "Fintech",
-      "year": "2025",
-      "tagline": "A banking-grade mobile client",
-      "description": "A secure banking app architected with BLoC + Clean Architecture for strict domain isolation. Hardened end-to-end with AES-256 local encryption, SSL certificate pinning and OAuth2/JWT token-lifecycle management.",
+      "id": "rbac-flutter",
+      "title": "rbac_flutter",
+      "category": "Open Source",
+      "year": "2026",
+      "tagline": "A role-based UI rendering engine for Flutter",
+      "description": "A production-grade RBAC + ABAC engine that decides what each role is allowed to see. Built on Clean Architecture with a TDD-first suite (18 test files), Riverpod-reactive widgets that rebuild when policies change, Dio-powered remote policies and a SHA-256 cache-first store — fail-closed by default.",
       "tech": [
         "Flutter",
-        "BLoC",
+        "Riverpod",
         "Clean Architecture",
-        "OAuth2/JWT"
+        "Dio"
       ],
       "accent": [
         "#5B8CFF",
@@ -236,64 +236,32 @@
       "featured": true,
       "metrics": [
         {
-          "k": "Encryption",
-          "v": "AES-256"
+          "k": "Model",
+          "v": "RBAC + ABAC"
         },
         {
-          "k": "Auth",
-          "v": "OAuth2/JWT"
+          "k": "Tests",
+          "v": "18 files"
         },
         {
-          "k": "Architecture",
+          "k": "Arch",
           "v": "Clean"
         }
-      ]
-    },
-    {
-      "id": "rsgt",
-      "title": "Red Sea Gateway",
-      "category": "Cross-platform",
-      "year": "2025",
-      "tagline": "One codebase, web + mobile",
-      "description": "A single-codebase Flutter Web & Mobile platform for a port terminal. Adaptive layouts bridge an operations dashboard and a field-agent app over a failure-typed Result data layer that let a team of 3 ship in parallel.",
-      "tech": [
-        "Flutter Web",
-        "Flutter",
-        "Adaptive UI",
-        "Clean Architecture"
       ],
-      "accent": [
-        "#3DDBB8",
-        "#5B8CFF"
-      ],
-      "featured": true,
-      "metrics": [
-        {
-          "k": "Codebase",
-          "v": "Web + Mobile"
-        },
-        {
-          "k": "Team",
-          "v": "3 devs"
-        },
-        {
-          "k": "Data layer",
-          "v": "Result"
-        }
-      ]
+      "repo": "https://github.com/Kshitij-25/rbac_flutter"
     },
     {
       "id": "briefsea",
-      "title": "BRIEFSEA",
+      "title": "Briefsea",
       "category": "Social",
-      "year": "2024",
-      "tagline": "Real-time hiring & networking",
-      "description": "A social hiring platform with a real-time messaging subsystem on Socket.IO — event-based room isolation sustaining 500+ concurrent sessions, instrumented with Firebase Analytics and deep linking.",
+      "year": "2025",
+      "tagline": "A social networking & hiring platform",
+      "description": "A social hiring and networking app combining profiles, feeds and real-time chat. Messaging runs on Socket.IO while Firebase handles auth, analytics and push — with JWT sessions, infinite-scroll feeds, deep linking and Apple/Google sign-in, all on a Riverpod + go_router architecture.",
       "tech": [
         "Flutter",
         "Socket.IO",
         "Firebase",
-        "Node.js"
+        "Riverpod"
       ],
       "accent": [
         "#B98CFF",
@@ -302,60 +270,66 @@
       "featured": true,
       "metrics": [
         {
-          "k": "Concurrent",
-          "v": "500+"
-        },
-        {
-          "k": "UI consistency",
-          "v": "98%"
-        },
-        {
           "k": "Realtime",
           "v": "Socket.IO"
-        }
-      ]
-    },
-    {
-      "id": "go4call",
-      "title": "GO4CALL",
-      "category": "Telephony",
-      "year": "2023",
-      "tagline": "VoIP conferencing client",
-      "description": "A conferencing app with a protocol abstraction layer decoupling SIP/MQTT signaling from UI state, reaching 99.5% uptime. Re-architected the notification pipeline to cut missed-push failures by 95%.",
-      "tech": [
-        "Flutter",
-        "SIP",
-        "MQTT",
-        "FCM"
-      ],
-      "accent": [
-        "#5BD1FF",
-        "#5B8CFF"
-      ],
-      "featured": false,
-      "metrics": [
-        {
-          "k": "Uptime",
-          "v": "99.5%"
         },
         {
-          "k": "Missed pushes",
-          "v": "-95%"
+          "k": "Backend",
+          "v": "Firebase"
+        },
+        {
+          "k": "Sessions",
+          "v": "JWT"
         }
-      ]
+      ],
+      "repo": "https://github.com/Kshitij-25/briefSea"
     },
     {
-      "id": "mindnest",
-      "title": "MindNest",
-      "category": "Full-stack",
-      "year": "2024",
-      "tagline": "A mental-health platform, built solo",
-      "description": "A full-stack mental-health app architected end-to-end: a multi-tenant data model with role-isolated access, a versioned REST API and JWT auth with refresh-token rotation on Spring Boot + Neon PostgreSQL.",
+      "id": "newsnest",
+      "title": "NewsNest",
+      "category": "News",
+      "year": "2026",
+      "tagline": "A cross-platform Flutter news reader",
+      "description": "A clean, image-rich news app delivering live headlines across categories. Built with Riverpod state management and Freezed models over a Dio networking layer (with .env-configured keys), plus in-app WebView article reading and native sharing.",
       "tech": [
         "Flutter",
-        "Spring Boot",
-        "PostgreSQL",
-        "JWT"
+        "Riverpod",
+        "Dio",
+        "Freezed"
+      ],
+      "accent": [
+        "#3DDBB8",
+        "#5B8CFF"
+      ],
+      "featured": true,
+      "metrics": [
+        {
+          "k": "State",
+          "v": "Riverpod"
+        },
+        {
+          "k": "Models",
+          "v": "Freezed"
+        },
+        {
+          "k": "Network",
+          "v": "Dio"
+        }
+      ],
+      "repo": "https://github.com/Kshitij-25/NewsApp"
+    },
+    {
+      "id": "paypact",
+      "title": "PayPact",
+      "category": "Fintech",
+      "year": "2026",
+      "tagline": "Split expenses with your group",
+      "description": "A Splitwise-style group expense splitter: shared groups, expenses and settle-up flows with activity and notifications. Built on a custom design system with a BLoC + Clean Architecture core, a Firebase backend, fl_chart insights and QR-based payments via mobile scanning.",
+      "tech": [
+        "Flutter",
+        "BLoC",
+        "Firebase",
+        "Clean Architecture"
       ],
       "accent": [
         "#7C5CFF",
@@ -364,26 +338,66 @@
       "featured": false,
       "metrics": [
         {
-          "k": "Stack",
-          "v": "Full-stack"
+          "k": "Backend",
+          "v": "Firebase"
         },
         {
-          "k": "Auth",
-          "v": "JWT rotation"
+          "k": "Arch",
+          "v": "BLoC + Clean"
+        },
+        {
+          "k": "Charts",
+          "v": "fl_chart"
         }
-      ]
+      ],
+      "repo": "https://github.com/Kshitij-25/PayPact-v2"
     },
     {
-      "id": "cocolife",
-      "title": "COCOLIFE",
-      "category": "Healthcare",
-      "year": "2022",
-      "tagline": "Insurance platform at scale",
-      "description": "A mission-critical healthcare & insurance app held to a 99.95% uptime SLA through proactive performance profiling and coordinated .NET backend release synchronization during peak enrollment.",
+      "id": "chillflix",
+      "title": "ChillFlix",
+      "category": "Entertainment",
+      "year": "2024",
+      "tagline": "A movie & TV streaming app",
+      "description": "A streaming app for browsing movies and shows with trailer playback. Firebase auth (with Google Sign-In) and Firestore back a Riverpod + go_router architecture, with YouTube-powered trailers, cached imagery and a media-forward UI.",
       "tech": [
         "Flutter",
-        ".NET",
-        "FCM"
+        "Riverpod",
+        "Firebase",
+        "go_router"
+      ],
+      "accent": [
+        "#5BD1FF",
+        "#5B8CFF"
+      ],
+      "featured": false,
+      "metrics": [
+        {
+          "k": "Auth",
+          "v": "Firebase"
+        },
+        {
+          "k": "Trailers",
+          "v": "YouTube"
+        },
+        {
+          "k": "Nav",
+          "v": "go_router"
+        }
+      ],
+      "repo": "https://github.com/Kshitij-25/ChillFlix"
+    },
+    {
+      "id": "shopsy",
+      "title": "Shopsy",
+      "category": "E-Commerce",
+      "year": "2025",
+      "tagline": "A modern Flutter e-commerce app",
+      "description": "A Material 3 shopping app with product galleries, cart and checkout flows. Riverpod drives state, SharedPreferences persists locally, images are cached and a carousel showcases products — with flutter_animate motion throughout and a data layer ready for API integration.",
+      "tech": [
+        "Flutter",
+        "Riverpod",
+        "Material 3",
+        "flutter_animate"
       ],
       "accent": [
         "#FFB85B",
@@ -392,14 +406,19 @@
       "featured": false,
       "metrics": [
         {
-          "k": "Uptime",
-          "v": "99.95%"
+          "k": "State",
+          "v": "Riverpod"
         },
         {
-          "k": "Domain",
-          "v": "Insurance"
+          "k": "Design",
+          "v": "Material 3"
+        },
+        {
+          "k": "Motion",
+          "v": "flutter_animate"
         }
-      ]
+      ],
+      "repo": "https://github.com/Kshitij-25/shopsy"
     }
   ],
   "experience": [

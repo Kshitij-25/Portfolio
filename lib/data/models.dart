@@ -181,6 +181,8 @@ class Project {
     required this.accent,
     required this.featured,
     required this.metrics,
+    this.repo,
+    this.demo,
   });
   final String id;
   final String title;
@@ -192,6 +194,12 @@ class Project {
   final List<Color> accent;
   final bool featured;
   final List<Metric> metrics;
+
+  /// Link to the source repository (e.g. GitHub). Null hides the "View Code" CTA.
+  final String? repo;
+
+  /// Link to a live/hosted demo. Null hides the "Live Demo" CTA.
+  final String? demo;
 
   factory Project.fromJson(Map<String, dynamic> j) => Project(
         id: j['id'] as String,
@@ -208,6 +216,8 @@ class Project {
         metrics: (j['metrics'] as List<dynamic>)
             .map((e) => Metric.fromJson(e as Map<String, dynamic>))
             .toList(),
+        repo: j['repo'] as String?,
+        demo: j['demo'] as String?,
       );
 }
 

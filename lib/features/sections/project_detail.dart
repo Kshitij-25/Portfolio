@@ -154,24 +154,28 @@ class _ProjectDetail extends StatelessWidget {
                               for (final t in project.tech) ChipTag(t),
                             ],
                           ),
-                          const SizedBox(height: 28),
-                          Wrap(
-                            spacing: 14,
-                            runSpacing: 14,
-                            children: [
-                              GradientButton(
-                                label: 'Live Demo',
-                                trailing: Icons.open_in_new_rounded,
-                                onPressed: () => _open('https://example.com'),
-                              ),
-                              GradientButton(
-                                label: 'View Code',
-                                variant: BtnVariant.ghost,
-                                leading: Icons.code_rounded,
-                                onPressed: () => _open('https://github.com'),
-                              ),
-                            ],
-                          ),
+                          if (project.demo != null || project.repo != null) ...[
+                            const SizedBox(height: 28),
+                            Wrap(
+                              spacing: 14,
+                              runSpacing: 14,
+                              children: [
+                                if (project.demo != null)
+                                  GradientButton(
+                                    label: 'Live Demo',
+                                    trailing: Icons.open_in_new_rounded,
+                                    onPressed: () => _open(project.demo!),
+                                  ),
+                                if (project.repo != null)
+                                  GradientButton(
+                                    label: 'View Code',
+                                    variant: BtnVariant.ghost,
+                                    leading: Icons.code_rounded,
+                                    onPressed: () => _open(project.repo!),
+                                  ),
+                              ],
+                            ),
+                          ],
                         ],
                       ),
                     ),
