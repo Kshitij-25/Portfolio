@@ -1,0 +1,496 @@
+{
+  "identity": {
+    "name": "Kshitij Passi",
+    "first": "Kshitij",
+    "role": "Software Engineer",
+    "handle": "@kshitijpassi",
+    "location": "Ghaziabad, India",
+    "available": true,
+    "tagline": "Building beautiful cross-platform experiences with Flutter.",
+    "intro": "I build cross-platform apps with Flutter across Web, iOS and Android — from banking-grade mobile clients to operations dashboards — with a focus on clean architecture, security and performance.",
+    "email": "in.kshitijwork@gmail.com",
+    "socials": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/kshitij-25",
+        "icon": "code"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/kshitij-passi",
+        "icon": "business"
+      },
+      {
+        "label": "Play Store",
+        "url": "https://play.google.com/store/apps/dev?id=8836767775677848927",
+        "icon": "android"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:in.kshitijwork@gmail.com",
+        "icon": "mail"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": 4,
+      "suffix": "+",
+      "label": "Years building"
+    },
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Apps shipped"
+    },
+    {
+      "value": 4,
+      "suffix": "",
+      "label": "Companies"
+    },
+    {
+      "value": 99.9,
+      "suffix": "%",
+      "label": "Peak uptime",
+      "decimals": 1
+    }
+  ],
+  "about": {
+    "bio": [
+      "I'm a Software Engineer specializing in Flutter, building cross-platform apps for Web, iOS and Android. I care about clean architecture, security, and the polish that makes an app feel effortless.",
+      "I've shipped products across banking, telephony, social and healthcare — owning everything from layered architecture and state management to API contracts and the last 5% of UI polish."
+    ],
+    "passion": "I believe great software is felt, not just used. Strong architecture, a hardened security posture and tight performance are what let a product earn trust at scale.",
+    "journey": [
+      {
+        "year": "2025",
+        "title": "Software Engineer",
+        "org": "NeoSOFT",
+        "note": "Banking-grade Flutter apps for Bank of India (Starlight) & RSGT."
+      },
+      {
+        "year": "2024",
+        "title": "Software Developer",
+        "org": "FBF Entertainment",
+        "note": "Built BRIEFSEA's real-time messaging for 500+ live sessions."
+      },
+      {
+        "year": "2023",
+        "title": "Associate Software Developer",
+        "org": "Suma Soft",
+        "note": "Conferencing & dialer apps held to 99.5% uptime."
+      },
+      {
+        "year": "2022",
+        "title": "Software Developer",
+        "org": "Avis e Solutions",
+        "note": "Helpdesk, dialer & healthcare apps — started my dev career."
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Flutter",
+      "level": 97,
+      "group": "Core"
+    },
+    {
+      "name": "Dart",
+      "level": 95,
+      "group": "Core"
+    },
+    {
+      "name": "BLoC",
+      "level": 92,
+      "group": "State"
+    },
+    {
+      "name": "Clean Architecture",
+      "level": 90,
+      "group": "Core"
+    },
+    {
+      "name": "Riverpod",
+      "level": 86,
+      "group": "State"
+    },
+    {
+      "name": "Firebase",
+      "level": 85,
+      "group": "Tools"
+    },
+    {
+      "name": "MVVM",
+      "level": 85,
+      "group": "Core"
+    },
+    {
+      "name": "MVC",
+      "level": 82,
+      "group": "Core"
+    },
+    {
+      "name": "GetX",
+      "level": 82,
+      "group": "State"
+    },
+    {
+      "name": "Provider",
+      "level": 84,
+      "group": "State"
+    },
+    {
+      "name": "Spring Boot",
+      "level": 78,
+      "group": "Backend"
+    },
+    {
+      "name": "FastAPI",
+      "level": 74,
+      "group": "Backend"
+    },
+    {
+      "name": "Node.js",
+      "level": 76,
+      "group": "Backend"
+    },
+    {
+      "name": ".NET",
+      "level": 70,
+      "group": "Backend"
+    },
+    {
+      "name": "PostgreSQL",
+      "level": 80,
+      "group": "Data"
+    },
+    {
+      "name": "Hive",
+      "level": 86,
+      "group": "Data"
+    },
+    {
+      "name": "Sembast",
+      "level": 80,
+      "group": "Data"
+    },
+    {
+      "name": "Sqflite",
+      "level": 84,
+      "group": "Data"
+    },
+    {
+      "name": "Git",
+      "level": 90,
+      "group": "Tools"
+    },
+    {
+      "name": "Android Studio",
+      "level": 88,
+      "group": "Tools"
+    },
+    {
+      "name": "VS Code",
+      "level": 90,
+      "group": "Tools"
+    },
+    {
+      "name": "Xcode",
+      "level": 75,
+      "group": "Tools"
+    },
+    {
+      "name": "SIP",
+      "level": 78,
+      "group": "Protocols"
+    },
+    {
+      "name": "MQTT",
+      "level": 80,
+      "group": "Protocols"
+    },
+    {
+      "name": "Socket.IO",
+      "level": 84,
+      "group": "Protocols"
+    }
+  ],
+  "projects": [
+    {
+      "id": "boi-starlight",
+      "title": "BOI Starlight",
+      "category": "Fintech",
+      "year": "2025",
+      "tagline": "A banking-grade mobile client",
+      "description": "A secure banking app architected with BLoC + Clean Architecture for strict domain isolation. Hardened end-to-end with AES-256 local encryption, SSL certificate pinning and OAuth2/JWT token-lifecycle management.",
+      "tech": [
+        "Flutter",
+        "BLoC",
+        "Clean Architecture",
+        "OAuth2/JWT"
+      ],
+      "accent": [
+        "#5B8CFF",
+        "#7C5CFF"
+      ],
+      "featured": true,
+      "metrics": [
+        {
+          "k": "Encryption",
+          "v": "AES-256"
+        },
+        {
+          "k": "Auth",
+          "v": "OAuth2/JWT"
+        },
+        {
+          "k": "Architecture",
+          "v": "Clean"
+        }
+      ]
+    },
+    {
+      "id": "rsgt",
+      "title": "Red Sea Gateway",
+      "category": "Cross-platform",
+      "year": "2025",
+      "tagline": "One codebase, web + mobile",
+      "description": "A single-codebase Flutter Web & Mobile platform for a port terminal. Adaptive layouts bridge an operations dashboard and a field-agent app over a failure-typed Result data layer that let a team of 3 ship in parallel.",
+      "tech": [
+        "Flutter Web",
+        "Flutter",
+        "Adaptive UI",
+        "Clean Architecture"
+      ],
+      "accent": [
+        "#3DDBB8",
+        "#5B8CFF"
+      ],
+      "featured": true,
+      "metrics": [
+        {
+          "k": "Codebase",
+          "v": "Web + Mobile"
+        },
+        {
+          "k": "Team",
+          "v": "3 devs"
+        },
+        {
+          "k": "Data layer",
+          "v": "Result"
+        }
+      ]
+    },
+    {
+      "id": "briefsea",
+      "title": "BRIEFSEA",
+      "category": "Social",
+      "year": "2024",
+      "tagline": "Real-time hiring & networking",
+      "description": "A social hiring platform with a real-time messaging subsystem on Socket.IO — event-based room isolation sustaining 500+ concurrent sessions, instrumented with Firebase Analytics and deep linking.",
+      "tech": [
+        "Flutter",
+        "Socket.IO",
+        "Firebase",
+        "Node.js"
+      ],
+      "accent": [
+        "#B98CFF",
+        "#FF8A5B"
+      ],
+      "featured": true,
+      "metrics": [
+        {
+          "k": "Concurrent",
+          "v": "500+"
+        },
+        {
+          "k": "UI consistency",
+          "v": "98%"
+        },
+        {
+          "k": "Realtime",
+          "v": "Socket.IO"
+        }
+      ]
+    },
+    {
+      "id": "go4call",
+      "title": "GO4CALL",
+      "category": "Telephony",
+      "year": "2023",
+      "tagline": "VoIP conferencing client",
+      "description": "A conferencing app with a protocol abstraction layer decoupling SIP/MQTT signaling from UI state, reaching 99.5% uptime. Re-architected the notification pipeline to cut missed-push failures by 95%.",
+      "tech": [
+        "Flutter",
+        "SIP",
+        "MQTT",
+        "FCM"
+      ],
+      "accent": [
+        "#5BD1FF",
+        "#5B8CFF"
+      ],
+      "featured": false,
+      "metrics": [
+        {
+          "k": "Uptime",
+          "v": "99.5%"
+        },
+        {
+          "k": "Missed pushes",
+          "v": "-95%"
+        }
+      ]
+    },
+    {
+      "id": "mindnest",
+      "title": "MindNest",
+      "category": "Full-stack",
+      "year": "2024",
+      "tagline": "A mental-health platform, built solo",
+      "description": "A full-stack mental-health app architected end-to-end: a multi-tenant data model with role-isolated access, a versioned REST API and JWT auth with refresh-token rotation on Spring Boot + Neon PostgreSQL.",
+      "tech": [
+        "Flutter",
+        "Spring Boot",
+        "PostgreSQL",
+        "JWT"
+      ],
+      "accent": [
+        "#7C5CFF",
+        "#B98CFF"
+      ],
+      "featured": false,
+      "metrics": [
+        {
+          "k": "Stack",
+          "v": "Full-stack"
+        },
+        {
+          "k": "Auth",
+          "v": "JWT rotation"
+        }
+      ]
+    },
+    {
+      "id": "cocolife",
+      "title": "COCOLIFE",
+      "category": "Healthcare",
+      "year": "2022",
+      "tagline": "Insurance platform at scale",
+      "description": "A mission-critical healthcare & insurance app held to a 99.95% uptime SLA through proactive performance profiling and coordinated .NET backend release synchronization during peak enrollment.",
+      "tech": [
+        "Flutter",
+        ".NET",
+        "FCM"
+      ],
+      "accent": [
+        "#FFB85B",
+        "#FF5B8C"
+      ],
+      "featured": false,
+      "metrics": [
+        {
+          "k": "Uptime",
+          "v": "99.95%"
+        },
+        {
+          "k": "Domain",
+          "v": "Insurance"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "period": "Oct 2025 — Present",
+      "role": "Software Engineer",
+      "company": "NeoSOFT",
+      "type": "Full-time",
+      "points": [
+        "Defined a layered BLoC + Clean Architecture for Bank of India's Starlight banking app, with independently deployable, testable domains.",
+        "Owned the mobile security posture: AES-256 storage, SSL pinning and OAuth2/JWT token-lifecycle management.",
+        "Built RSGT as a single Flutter Web + Mobile codebase with adaptive layouts and a failure-typed data layer for a team of 3."
+      ]
+    },
+    {
+      "period": "May 2024 — Jul 2025",
+      "role": "Software Developer",
+      "company": "FBF Entertainment",
+      "type": "Remote",
+      "points": [
+        "Built BRIEFSEA's real-time messaging on Socket.IO — room isolation sustaining 500+ concurrent sessions.",
+        "Drove API contract definition with the Node.js team, reaching 98% UI consistency across device form factors.",
+        "Instrumented Firebase Analytics & deep linking to ground feature prioritization in funnel metrics."
+      ]
+    },
+    {
+      "period": "Aug 2023 — Apr 2024",
+      "role": "Associate Software Developer",
+      "company": "Suma Soft",
+      "type": "Full-time",
+      "points": [
+        "Designed a protocol abstraction layer for GO4CALL, decoupling SIP/MQTT signaling from UI state (99.5% uptime).",
+        "Re-architected the notification pipeline to serialize delivery, cutting missed-push failures by 95%.",
+        "Modelled FIELD AGENT's call lifecycle as a Riverpod state machine — zero critical crashes across three releases."
+      ]
+    },
+    {
+      "period": "Jul 2022 — Aug 2023",
+      "role": "Software Developer",
+      "company": "Avis e Solutions",
+      "type": "Full-time",
+      "points": [
+        "Built a role-based access control model mapping agent/supervisor/admin tiers to .NET API authorization.",
+        "Defined OTP + short-lived token auth for CONTAQUE Mobili with the Spring Boot team.",
+        "Sustained 99.95% uptime for COCOLIFE, a mission-critical insurance platform, during peak enrollment."
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "value": 4,
+      "suffix": "+",
+      "label": "Years of experience",
+      "icon": "timeline"
+    },
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Apps shipped",
+      "icon": "rocket"
+    },
+    {
+      "value": 4,
+      "suffix": "",
+      "label": "Companies",
+      "icon": "apartment"
+    },
+    {
+      "value": 99.95,
+      "suffix": "%",
+      "label": "Peak uptime",
+      "icon": "verified",
+      "decimals": 2
+    },
+    {
+      "value": 500,
+      "suffix": "+",
+      "label": "Concurrent sessions",
+      "icon": "bolt"
+    },
+    {
+      "value": 98,
+      "suffix": "%",
+      "label": "UI consistency",
+      "icon": "devices"
+    }
+  ],
+  "certifications": [
+    "B.Tech · Computer Science — JSS Academy",
+    "Diploma · Electronics & Communication — Pusa Institute",
+    "Clean Architecture & BLoC",
+    "Mobile Security: AES-256 · OAuth2/JWT"
+  ]
+}
